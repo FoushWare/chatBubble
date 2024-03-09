@@ -14,7 +14,6 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
   messages,
   setMessages,
 }) => {
-  const [textMessage, setTextMessage] = useState("");
   const { expanded, toggleExpand } = useExpanded(false);
   const messageListRef = useRef<HTMLUListElement>(null);
 
@@ -31,8 +30,6 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
               messageListRef={messageListRef}
             />
             <ChatInputs
-              textMessage={textMessage}
-              setTextMessage={setTextMessage}
               messages={messages}
               setMessages={setMessages}
               messageListRef={messageListRef}
