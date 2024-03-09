@@ -6,7 +6,7 @@ import { ChatLogoProps } from "./chatLogo";
 const ChatLogo = ({ expanded, toggleExpand }: ChatLogoProps) => {
   const bubleIconSrc = expanded ? "/down-arrow.svg" : "/chat-logo.svg";
   return (
-    <ChatIconContainer>
+    <ChatIconContainer expanded={expanded}>
       <ChatIconImage
         src={bubleIconSrc}
         alt="Chat Logo"

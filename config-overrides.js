@@ -6,6 +6,7 @@ module.exports = override(
     {
       root: ["./src"],
       alias: {
+        "@/": "./src",
         "@Components": "./src/components",
         "@Utils": "./src/utils",
         "@Modules": "./src/Modules",

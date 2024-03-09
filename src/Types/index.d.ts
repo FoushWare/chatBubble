@@ -19,6 +19,7 @@ export interface VoiceMessage extends BaseMessage {
 }
 
 //User can Define additional message types
+
 // export interface VideoMessage extends BaseMessage {
 //   type: "video";
 //   videoUrl: string;

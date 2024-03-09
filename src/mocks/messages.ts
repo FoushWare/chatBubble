@@ -15,7 +15,7 @@ const messages: Message[] = [
   {
     type: "voice",
     sender: "other",
-    audioUrl: "https://example.com/audio.mp3",
+    audioUrl: "/audio.mp3",
   },
   {
     type: "text",
@@ -76,6 +76,11 @@ const messages: Message[] = [
     type: "text",
     sender: "other",
     content: "I like blue.",
+  },
+  {
+    type: "voice",
+    sender: "other",
+    audioUrl: "/audio.mp3",
   },
 ];
 
