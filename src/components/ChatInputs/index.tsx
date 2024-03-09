@@ -5,7 +5,7 @@ import {
   SendButton,
   SendButtonIcon,
   SendButtonImage,
-} from "../../Modules/ChatBubble/ChatBubble.styles";
+} from "./ChatInputs.styles";
 import { ChatInputProps } from "./chatInputs";
 import {
   handleSendTextMessage,
@@ -27,7 +27,6 @@ const ChatInputs: React.FC<ChatInputProps> = ({
   const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextMessage(event.target.value);
   };
-  console.log("lang in textarea ", lang);
 
   return (
     <InputContainer isRTL={lang === "ar"}>

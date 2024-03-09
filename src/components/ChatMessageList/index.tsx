@@ -1,8 +1,5 @@
-import { useEffect, useRef } from "react";
-import {
-  MessageItem,
-  MessageList,
-} from "../../Modules/ChatBubble/ChatBubble.styles";
+import { useEffect } from "react";
+import { MessageItem, MessageList } from "./ChatMessageList.styles";
 import renderMessageContent from "../../helper/MessageRenderer";
 import { ChatMessageListProps } from "./chatMessageList";
 

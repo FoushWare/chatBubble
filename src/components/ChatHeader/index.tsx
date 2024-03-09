@@ -1,10 +1,5 @@
 import { useTranslation } from "react-i18next";
-import {
-  Avatar,
-  ExpandButton,
-  Header,
-  Title,
-} from "../../Modules/ChatBubble/ChatBubble.styles";
+import { Avatar, ExpandButton, Header, Title } from "./ChatHeader.styles";
 import { ChatHeaderProps } from "./chatHeader";
 
 const ChatHeader = ({

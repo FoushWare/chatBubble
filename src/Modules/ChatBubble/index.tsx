@@ -18,7 +18,6 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
 }) => {
   const { expanded, toggleExpand } = useExpanded(false);
   const messageListRef = useRef<HTMLUListElement>(null);
-  // get lang from i18n
   const {
     i18n: { language: lang },
   } = useTranslation();

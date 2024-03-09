@@ -3,7 +3,6 @@ import messagesList from "./mocks/messages";
 import { Message } from "./Types";
 import { useState } from "react";
 import LanguageSelector from "@Components/LanguageSelector";
-import { Route, Router, RouterProvider, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 function App() {

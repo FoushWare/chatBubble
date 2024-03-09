@@ -1,7 +1,4 @@
-import {
-  ChatIconContainer,
-  ChatIconImage,
-} from "../../Modules/ChatBubble/ChatBubble.styles";
+import { ChatIconContainer, ChatIconImage } from "./ChatLogo.styles";
 import { ChatLogoProps } from "./chatLogo";
 const ChatLogo = ({ expanded, toggleExpand }: ChatLogoProps) => {
   const bubleIconSrc = expanded ? "/down-arrow.svg" : "/chat-logo.svg";
