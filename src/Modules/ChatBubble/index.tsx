@@ -12,9 +12,9 @@ import { useTranslation } from "react-i18next";
 const ChatBubble: React.FC<ChatBubbleProps> = ({
   title,
   avatarUrl,
-  accentColor,
   messages,
   setMessages,
+  renderMessages,
 }) => {
   const { expanded, toggleExpand } = useExpanded(false);
   const messageListRef = useRef<HTMLUListElement>(null);
@@ -28,7 +28,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
       <StyleSheetManager stylisPlugins={lang === "ar" ? [rtlPlugin] : []}>
         {/* ---- Main Chat Bubble Component -------- */}
         <ChatLogo toggleExpand={toggleExpand} expanded={expanded} />
-        <Container expanded={expanded} accentColor={accentColor}>
+        <Container expanded={expanded}>
           <ChatHeader
             expanded={expanded}
             avatarUrl={avatarUrl}
@@ -39,8 +39,8 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({
             <>
               <ChatMessageList
                 messages={messages}
-                accentColor={accentColor}
                 messageListRef={messageListRef}
+                renderMessages={renderMessages}
               />
               <ChatInputs
                 messages={messages}

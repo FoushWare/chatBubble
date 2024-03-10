@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ expanded: boolean; accentColor: string }>`
+export const Container = styled.div<{ expanded: boolean }>`
   border: 1px solid #ccc;
   border-radius: 8px;
   width: ${(props) => (props.expanded ? "340px" : "px")};

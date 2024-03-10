@@ -41,4 +41,5 @@ export interface ChatBubbleProps {
   accentColor: string;
   messages: Message[];
   setMessages: (messages: Message[]) => void;
+  renderMessages: () => JSX.Element[];
 }
