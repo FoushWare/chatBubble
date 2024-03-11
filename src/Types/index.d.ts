@@ -39,7 +39,6 @@ export interface ChatBubbleProps {
   title: string;
   avatarUrl: string;
   accentColor: string;
-  messages: Message[];
-  setMessages: (messages: Message[]) => void;
-  renderMessages: () => JSX.Element[];
+  renderMessages: () => JSX.Element;
+  renderChatInputs: () => JSX.Element;
 }

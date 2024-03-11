@@ -17,7 +17,8 @@ const ChatInputs: React.FC<ChatInputProps> = ({
   messages,
   setMessages,
   messageListRef,
-}: ChatInputProps) => {
+  allowedMessageTypes, // Array of allowed message types
+}: ChatInputProps & { allowedMessageTypes: string[] }) => {
   const [textMessage, setTextMessage] = useState("");
   const {
     i18n: { language: lang },
@@ -28,28 +29,51 @@ const ChatInputs: React.FC<ChatInputProps> = ({
     setTextMessage(event.target.value);
   };
 
+  const renderInputBasedOnMessageType = () => {
+    return allowedMessageTypes.map((type) => {
+      switch (type) {
+        case "text":
+          return (
+            <Input
+              key={type}
+              placeholder={t("write-your-message-here", { lng: lang })}
+              value={textMessage}
+              onChange={handleTextChange}
+              isRTL={lang === "ar"}
+            />
+          );
+        case "image":
+          return (
+            <label key={type} htmlFor="fileInput">
+              <input
+                id="fileInput"
+                type="file"
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={(event) =>
+                  handleSendImageMessage(
+                    event,
+                    messages,
+                    setMessages,
+                    messageListRef
+                  )
+                }
+              />
+              <SendButton as="span">
+                <SendButtonIcon src="/attach.svg" />
+              </SendButton>
+            </label>
+          );
+        // Add other cases for other message types (e.g., "video")
+        default:
+          return null;
+      }
+    });
+  };
+
   return (
     <InputContainer isRTL={lang === "ar"}>
-      <Input
-        placeholder={t("write-your-message-here", { lng: lang })}
-        value={textMessage}
-        onChange={handleTextChange}
-        isRTL={lang === "ar"}
-      />
-      <label htmlFor="fileInput">
-        <input
-          id="fileInput"
-          type="file"
-          accept="image/*"
-          style={{ display: "none" }}
-          onChange={(event) =>
-            handleSendImageMessage(event, messages, setMessages, messageListRef)
-          }
-        />
-        <SendButton as="span">
-          <SendButtonIcon src="/attach.svg" />
-        </SendButton>
-      </label>
+      {renderInputBasedOnMessageType()}
       <SendButton
         onClick={() =>
           handleSendTextMessage(
